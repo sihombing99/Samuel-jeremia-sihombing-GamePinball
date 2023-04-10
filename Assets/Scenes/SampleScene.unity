@@ -288,11 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 97
---- !u!95 &125332521 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2179944903373565584, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
-  m_PrefabInstance: {fileID: 826701165496235015}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &217865677
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +874,7 @@ GameObject:
   - component: {fileID: 1138339206}
   - component: {fileID: 1138339210}
   m_Layer: 0
-  m_Name: Bola
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +891,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.54
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1138339207
 MeshRenderer:
@@ -956,7 +951,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138339204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.48, y: 0.59, z: -4.77}
+  m_LocalPosition: {x: 0.64, y: 0.59, z: 1.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1030,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6160530883899079970, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: df67e10ef30ea804f862d49ab40bdce8, type: 2}
     - target: {fileID: 6641040462578162530, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
       propertyPath: m_Name
       value: Bummper (2)
@@ -1046,6 +1045,10 @@ PrefabInstance:
       propertyPath: hit_anim
       value: 
       objectReference: {fileID: 1954123274}
+    - target: {fileID: 7762866002241015629, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
+      propertyPath: multiplier
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
 --- !u!1 &1435341029
@@ -1333,6 +1336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6160530883899079970, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: df67e10ef30ea804f862d49ab40bdce8, type: 2}
     - target: {fileID: 6641040462578162530, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
       propertyPath: m_Name
       value: Bummper (1)
@@ -1345,6 +1352,10 @@ PrefabInstance:
       propertyPath: hit_anim
       value: 
       objectReference: {fileID: 286570561}
+    - target: {fileID: 7762866002241015629, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
+      propertyPath: multiplier
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
 --- !u!1 &1806852138
@@ -1665,6 +1676,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6160530883899079970, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: df67e10ef30ea804f862d49ab40bdce8, type: 2}
     - target: {fileID: 6641040462578162530, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
       propertyPath: m_Name
       value: Bummper
@@ -1673,9 +1688,5 @@ PrefabInstance:
       propertyPath: Ball
       value: 
       objectReference: {fileID: 1138339204}
-    - target: {fileID: 7762866002241015629, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}
-      propertyPath: hit_anim
-      value: 
-      objectReference: {fileID: 125332521}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cbb413669edb1a4dae1f6da9d1f50c1, type: 3}

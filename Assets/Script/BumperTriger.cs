@@ -9,46 +9,45 @@ public class BumperTriger : MonoBehaviour
 	public Material[] color;
 	Renderer rend;
 	Animator hit_anim;
-	public bool IsHit = false;
-	private int hit_animation;
+	bool colorChangging= false;
+
 
 	void Start()
 	{
 		rend = GetComponent<Renderer>();
 		rend.enabled = true;
-		int i = Random.Range(0, 1);
+		int i = Random.Range(0, 2);
 		rend.sharedMaterial = color[i];
 		hit_anim = GetComponent<Animator>();
-		hit_animation= Animator.StringToHash("animasipaddle");
+	
 
 	}
     private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.collider == Ball)
+		if (collision.gameObject.name == "Ball")
 		{
-			
+			hit_anim.SetTrigger("Hittrigger");
 			Rigidbody ballRig = Ball.GetComponent<Rigidbody>();
-			ballRig.velocity *= multiplier;
-
-			rend.sharedMaterial = color[0];
-			IsHit = true;
-			hit_anim.SetBool("animasipaddle", true);
-				hit_anim.SetTrigger("Hittrigger");
-				Debug.Log("animasi");
+            ballRig.velocity *= multiplier;
+            int i = Random.Range(1, 2);
+			colorChangging = true;
+            rend.sharedMaterial = color[i];
+            
+            Debug.Log("animasi");
 
 		}
-        else
-        {	
-			rend.sharedMaterial = color[1];
+        else if (!colorChangging)
+        {
+			StartCoroutine(Colorback());
+			//int i = Random.Range(0, 2);
+			//rend.sharedMaterial = color[i];
 			
 		}
 	}
 	 IEnumerator Colorback()
     {
-		if (rend.sharedMaterial = color[0])
-        {
 			yield return new WaitForSeconds(.1f);
-			rend.sharedMaterial = color[1];
-		}
+			rend.sharedMaterial = color[0];
+	
     }
 }

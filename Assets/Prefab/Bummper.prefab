@@ -96,8 +96,8 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: df67e10ef30ea804f862d49ab40bdce8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.54
+  m_Height: 2.91
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &7762866002241015629
@@ -113,8 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ball: {fileID: 0}
-  multiplier: 10
+  multiplier: 1.2
   color:
+  - {fileID: 2100000, guid: 2c6dd4c59eb110446bbbad5db6a935cd, type: 2}
   - {fileID: 2100000, guid: e66d517b1d435cd4982e3e4f0fd7c8de, type: 2}
   - {fileID: 2100000, guid: b3f46e2ee644f0544b160f36938548ed, type: 2}
 --- !u!95 &2179944903373565584

@@ -6,19 +6,19 @@ public class BumperTriger : MonoBehaviour
 {
 	public GameObject Ball;
 	public float multiplier;
-	public Material[] color;
+	public Material color1;
+	public Material color2;
+	public Material color3;
 	Renderer rend;
 	Animator hit_anim;
-	bool colorChangging= false;
+	bool colorChangging;
 
 
 	void Start()
 	{
 		rend = GetComponent<Renderer>();
-		rend.enabled = true;
-		int i = Random.Range(0, 2);
-		rend.sharedMaterial = color[i];
 		hit_anim = GetComponent<Animator>();
+		setColor(colorChangging);
 	
 
 	}
@@ -29,25 +29,27 @@ public class BumperTriger : MonoBehaviour
 			hit_anim.SetTrigger("Hittrigger");
 			Rigidbody ballRig = Ball.GetComponent<Rigidbody>();
             ballRig.velocity *= multiplier;
-            int i = Random.Range(1, 2);
-			colorChangging = true;
-            rend.sharedMaterial = color[i];
-            
-            Debug.Log("animasi");
 
+			setColor(!colorChangging);
+            Debug.Log("animasi");
 		}
-        else if (!colorChangging)
-        {
-			StartCoroutine(Colorback());
-			//int i = Random.Range(0, 2);
-			//rend.sharedMaterial = color[i];
-			
-		}
+		StartCoroutine(OtherColor());
 	}
-	 IEnumerator Colorback()
+	void setColor(bool isActive)
     {
-			yield return new WaitForSeconds(.1f);
-			rend.sharedMaterial = color[0];
-	
+		colorChangging = isActive;
+		if (colorChangging == true)
+        {
+			rend.material = color1; 
+        }
+        else
+        {
+			rend.material = color2;
+        }
+    }
+	IEnumerator OtherColor()
+    {
+		yield return new WaitForSeconds(3f);
+		rend.material = color3;
     }
 }

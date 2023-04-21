@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ballControler : MonoBehaviour
 {
@@ -20,5 +21,6 @@ public class ballControler : MonoBehaviour
             rig.velocity = rig.velocity.normalized*maxSpeed;
         }
     }
+    
 }
 

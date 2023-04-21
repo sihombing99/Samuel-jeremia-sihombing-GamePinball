@@ -13,7 +13,8 @@ public class BumperTriger : MonoBehaviour
 	Animator hit_anim;
 	bool colorChangging;
 
-
+	public AudioManager AudioManager;
+	public VFXmanager VFXManager;
 	void Start()
 	{
 		rend = GetComponent<Renderer>();
@@ -32,6 +33,9 @@ public class BumperTriger : MonoBehaviour
 
 			setColor(!colorChangging);
             Debug.Log("animasi");
+			
+			AudioManager.PlaySFX(collision.transform.position);
+			VFXManager.PlayVFX(collision.transform.position);
 		}
 		StartCoroutine(OtherColor());
 	}

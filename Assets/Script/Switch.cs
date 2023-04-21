@@ -14,6 +14,8 @@ public class Switch : MonoBehaviour
     public Material switchcoloron;
     public Material switchcoloroff;
     switchstate state;
+    public AudioManagerSwitch AudioManager;
+    public VFXSwitchManager VFXManager;
     //bool IsOn;
     Renderer renderWarna;
     void Start()
@@ -28,6 +30,9 @@ public class Switch : MonoBehaviour
         if(other.gameObject.name == "Ball"){
             Toggle();
             Debug.Log("gantiwarna");
+            
+			AudioManager.PlaySFX(other.transform.position);
+			VFXManager.PlayVFX(other.transform.position);
         }
     }
 
